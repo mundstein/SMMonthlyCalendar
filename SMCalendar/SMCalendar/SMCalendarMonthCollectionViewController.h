@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SMCalendarMonthCollectionViewController.h
 //  SMCalendar
 //
 //  Created by Sascha Mundstein on 24/02/15.
@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SMCalendarViewController.h"
 
-@interface ViewController : SMCalendarViewController
+@interface SMCalendarMonthCollectionViewController : UICollectionViewController
 
+@property (nonatomic) NSDate *date;
 
 @end
-
