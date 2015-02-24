@@ -8,9 +8,6 @@
 
 #import "NSDate+SMUtilities.h"
 
-#define DATE_COMPONENTS (NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay |  NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal)
-#define CURRENT_CALENDAR [NSCalendar currentCalendar]
-#define NOW [NSDate date]
 
 @implementation NSDate (SMUtilities)
 
@@ -504,18 +501,27 @@
 // Getting date component localized names
 
 +(NSArray *)weekdayNames {
+    return [self weekdayNamesWithFormatterString:@"EEEE"];
+}
+
++(NSArray *)shortWeekdayNames {
+    return [self weekdayNamesWithFormatterString:@"EEE"];
+}
+
++(NSArray *)weekdayNamesWithFormatterString:(NSString *)dateFormat {
     NSDateFormatter *weekdayFormatter = [[NSDateFormatter alloc] init];
-    weekdayFormatter.dateFormat = @"EEEE";
+    weekdayFormatter.dateFormat = dateFormat;
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     comps.year = 2015; comps.month = 1;
     NSMutableArray *days = [NSMutableArray array];
     for (int i = 0; i < 7; i++) {
-        comps.day = 5 + i;
+        comps.day = 4 + i;
         NSDate *aDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
         [days addObject:[weekdayFormatter stringFromDate:aDate]];
     }
     return [NSArray arrayWithArray:days];
 }
+
 
 +(NSArray *)monthNames {
     NSDateFormatter *monthFormatter = [[NSDateFormatter alloc] init];

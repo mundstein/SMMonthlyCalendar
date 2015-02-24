@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#define DATE_COMPONENTS (NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay |  NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal)
+#define CURRENT_CALENDAR [NSCalendar currentCalendar]
+#define NOW [NSDate date]
+
+
 typedef NS_ENUM(NSInteger, WeekDays) {
     Sunday = 1, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
 };
@@ -111,6 +116,7 @@ typedef NS_ENUM(NSInteger, WeekDays) {
 
 // Getting date component localized names
 +(NSArray *)weekdayNames;
++(NSArray *)shortWeekdayNames;
 +(NSArray *)monthNames;
 
 @end

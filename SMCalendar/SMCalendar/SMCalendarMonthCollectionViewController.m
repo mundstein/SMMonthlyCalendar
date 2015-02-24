@@ -9,18 +9,26 @@
 #import "SMCalendarMonthCollectionViewController.h"
 #import "SMCalendarDayCollectionViewCell.h"
 #import "NSDate+SMUtilities.h"
+#import "SMDateEngine.h"
 
-@interface SMCalendarMonthCollectionViewController () <UICollectionViewDelegateFlowLayout>
+@interface SMCalendarMonthCollectionViewController () <UICollectionViewDelegateFlowLayout> {
+    NSArray *weekdayNames;
+}
 
 @end
 
 @implementation SMCalendarMonthCollectionViewController
 
 static NSString * const reuseIdentifier = @"Cell";
+static NSDateFormatter *weekdayFormatter;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.date = [NSDate date];
+    
+    weekdayFormatter = [[NSDateFormatter alloc] init];
+    weekdayFormatter.dateFormat = @"eee";
+    weekdayNames = [NSDate shortWeekdayNames];
     
     [self.collectionView registerClass:[SMCalendarDayCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 }
@@ -48,14 +56,24 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.date.totalDaysInMonth;
+    return [SMDateEngine numberOfRowsInMonthlyCalenderForDate:self.date]+7;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SMCalendarDayCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     cell.contentView.backgroundColor = [UIColor whiteColor];
-    cell.date = [self.date.firstDayInCurrentMonth dateByAddingDays:indexPath.row];
+    
+    if (indexPath.row < 7) {
+        cell.label.text = [weekdayNames[indexPath.row] uppercaseString];
+        cell.isCurrent = NO;
+        cell.isWeekday = YES;
+    }
+
+    else {
+        cell.date = [SMDateEngine dateForItemAtIndex:indexPath.item-7 withMonthDate:self.date];
+        cell.isCurrent = cell.date.month == self.date.month;
+    }
     
     return cell;
 }

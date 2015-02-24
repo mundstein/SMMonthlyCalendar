@@ -15,9 +15,10 @@
 		2B5070AF1A9D0EB6005E710A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5070AD1A9D0EB6005E710A /* LaunchScreen.xib */; };
 		2B5070BB1A9D0EB6005E710A /* SMCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5070BA1A9D0EB6005E710A /* SMCalendarTests.m */; };
 		2B5070C71A9D0F04005E710A /* SMCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5070C61A9D0F04005E710A /* SMCalendarViewController.m */; };
-		2B9114B61A9D0F75007163D4 /* NSDate+SMUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9114B51A9D0F75007163D4 /* NSDate+SMUtilities.m */; };
 		2B9114BC1A9D1170007163D4 /* SMCalendarMonthCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9114BB1A9D1170007163D4 /* SMCalendarMonthCollectionViewController.m */; };
 		2B9114C21A9D217B007163D4 /* SMCalendarDayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9114C11A9D217B007163D4 /* SMCalendarDayCollectionViewCell.m */; };
+		2B9114C81A9D3150007163D4 /* SMDateEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9114C71A9D3150007163D4 /* SMDateEngine.m */; };
+		2B9114CB1A9D316A007163D4 /* NSDate+SMUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9114CA1A9D316A007163D4 /* NSDate+SMUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,12 +47,14 @@
 		2B5070BA1A9D0EB6005E710A /* SMCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMCalendarTests.m; sourceTree = "<group>"; };
 		2B5070C51A9D0F04005E710A /* SMCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMCalendarViewController.h; path = SMCalendar/SMCalendar/SMCalendarViewController.h; sourceTree = "<group>"; };
 		2B5070C61A9D0F04005E710A /* SMCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMCalendarViewController.m; path = SMCalendar/SMCalendar/SMCalendarViewController.m; sourceTree = "<group>"; };
-		2B9114B41A9D0F75007163D4 /* NSDate+SMUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SMUtilities.h"; sourceTree = "<group>"; };
-		2B9114B51A9D0F75007163D4 /* NSDate+SMUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SMUtilities.m"; sourceTree = "<group>"; };
 		2B9114BA1A9D1170007163D4 /* SMCalendarMonthCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMCalendarMonthCollectionViewController.h; path = SMCalendar/SMCalendar/SMCalendarMonthCollectionViewController.h; sourceTree = "<group>"; };
 		2B9114BB1A9D1170007163D4 /* SMCalendarMonthCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMCalendarMonthCollectionViewController.m; path = SMCalendar/SMCalendar/SMCalendarMonthCollectionViewController.m; sourceTree = "<group>"; };
 		2B9114C01A9D217B007163D4 /* SMCalendarDayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMCalendarDayCollectionViewCell.h; path = SMCalendar/SMCalendar/SMCalendarDayCollectionViewCell.h; sourceTree = "<group>"; };
 		2B9114C11A9D217B007163D4 /* SMCalendarDayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMCalendarDayCollectionViewCell.m; path = SMCalendar/SMCalendar/SMCalendarDayCollectionViewCell.m; sourceTree = "<group>"; };
+		2B9114C61A9D3150007163D4 /* SMDateEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMDateEngine.h; path = SMCalendar/SMCalendar/SMDateEngine.h; sourceTree = "<group>"; };
+		2B9114C71A9D3150007163D4 /* SMDateEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMDateEngine.m; path = SMCalendar/SMCalendar/SMDateEngine.m; sourceTree = "<group>"; };
+		2B9114C91A9D316A007163D4 /* NSDate+SMUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+SMUtilities.h"; path = "SMCalendar/SMCalendar/NSDate+SMUtilities.h"; sourceTree = "<group>"; };
+		2B9114CA1A9D316A007163D4 /* NSDate+SMUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+SMUtilities.m"; path = "SMCalendar/SMCalendar/NSDate+SMUtilities.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +138,10 @@
 		2B5070C41A9D0ED5005E710A /* SMCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				2B9114B41A9D0F75007163D4 /* NSDate+SMUtilities.h */,
-				2B9114B51A9D0F75007163D4 /* NSDate+SMUtilities.m */,
+				2B9114C91A9D316A007163D4 /* NSDate+SMUtilities.h */,
+				2B9114CA1A9D316A007163D4 /* NSDate+SMUtilities.m */,
+				2B9114C61A9D3150007163D4 /* SMDateEngine.h */,
+				2B9114C71A9D3150007163D4 /* SMDateEngine.m */,
 				2B5070C51A9D0F04005E710A /* SMCalendarViewController.h */,
 				2B5070C61A9D0F04005E710A /* SMCalendarViewController.m */,
 				2B9114BA1A9D1170007163D4 /* SMCalendarMonthCollectionViewController.h */,
@@ -251,7 +256,8 @@
 				2B9114C21A9D217B007163D4 /* SMCalendarDayCollectionViewCell.m in Sources */,
 				2B5070A41A9D0EB6005E710A /* AppDelegate.m in Sources */,
 				2B5070C71A9D0F04005E710A /* SMCalendarViewController.m in Sources */,
-				2B9114B61A9D0F75007163D4 /* NSDate+SMUtilities.m in Sources */,
+				2B9114C81A9D3150007163D4 /* SMDateEngine.m in Sources */,
+				2B9114CB1A9D316A007163D4 /* NSDate+SMUtilities.m in Sources */,
 				2B9114BC1A9D1170007163D4 /* SMCalendarMonthCollectionViewController.m in Sources */,
 				2B5070A11A9D0EB6005E710A /* main.m in Sources */,
 			);

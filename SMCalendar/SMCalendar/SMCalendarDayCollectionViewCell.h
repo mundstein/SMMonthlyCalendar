@@ -12,5 +12,7 @@
 
 @property (nonatomic) UILabel *label;
 @property (nonatomic) NSDate *date;
+@property (nonatomic, assign) BOOL isCurrent;
+@property (nonatomic, assign) BOOL isWeekday;
 
 @end
