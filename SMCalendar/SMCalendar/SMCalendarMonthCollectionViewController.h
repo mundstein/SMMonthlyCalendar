@@ -11,5 +11,6 @@
 @interface SMCalendarMonthCollectionViewController : UICollectionViewController
 
 @property (nonatomic) NSDate *date;
+@property (nonatomic, strong) UILabel *monthLabel;
 
 @end

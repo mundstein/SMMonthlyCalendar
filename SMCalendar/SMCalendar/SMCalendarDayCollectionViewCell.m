@@ -39,11 +39,14 @@
     _date = date;
     self.label.text = [NSString stringWithFormat:@"%li", date.day];
     self.label.textColor = [UIColor darkTextColor];
+    if ([self.date isToday]) {
+        self.label.textColor = [UIColor redColor];
+    }
 }
 
 -(void)setIsCurrent:(BOOL)isCurrent {
     _isCurrent = isCurrent;
-    self.label.textColor = isCurrent ? [UIColor darkTextColor] : [UIColor lightGrayColor];
+    self.label.textColor = isCurrent ? self.label.textColor : [UIColor lightGrayColor];
 }
 
 -(void)setIsWeekday:(BOOL)isWeekday {
