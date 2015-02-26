@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Sascha Mundstein' => 'mundstein@gmail.com' }
   s.source       = { :git => 'https://github.com/mundstein/SMMonthlyCalendar.git', :tag => s.version.to_s }
   
-  s.source_files = 'SMMonthlyCalendar/SMMonthlyCalendar/*.{h,m}'
+  s.source_files = 'SMCalendar/SMCalendar/*.{h,m}'
   
   s.requires_arc = true
 end
